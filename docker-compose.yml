@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build: .
+    ports:
+      - "8000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: pnpm run dev
+    env_file:
+      - .env
